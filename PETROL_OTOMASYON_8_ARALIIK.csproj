@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D03B025-28BD-4BD6-A7EC-55BADBE30974}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PETROL_OTOMASYON_8_ARALIIK</RootNamespace>
+    <AssemblyName>PETROL_OTOMASYON_8_ARALIIK</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giriş.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giriş.Designer.cs">
+      <DependentUpon>Giriş.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa.Designer.cs">
+      <DependentUpon>Kasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personel.Designer.cs">
+      <DependentUpon>personel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pompa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pompa.Designer.cs">
+      <DependentUpon>pompa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sube.Designer.cs">
+      <DependentUpon>Sube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ürün.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ürün.Designer.cs">
+      <DependentUpon>Ürün.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giriş.resx">
+      <DependentUpon>Giriş.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa.resx">
+      <DependentUpon>Kasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel.resx">
+      <DependentUpon>personel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pompa.resx">
+      <DependentUpon>pompa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sube.resx">
+      <DependentUpon>Sube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ürün.resx">
+      <DependentUpon>Ürün.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="petrol_otomasyonDataSet.xsc">
+      <DependentUpon>petrol_otomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet.xss">
+      <DependentUpon>petrol_otomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet1.xsc">
+      <DependentUpon>petrol_otomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet1.xss">
+      <DependentUpon>petrol_otomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet2.xsc">
+      <DependentUpon>petrol_otomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet2.xss">
+      <DependentUpon>petrol_otomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet3.xsc">
+      <DependentUpon>petrol_otomasyonDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet3.xss">
+      <DependentUpon>petrol_otomasyonDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet4.xsc">
+      <DependentUpon>petrol_otomasyonDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet4.xss">
+      <DependentUpon>petrol_otomasyonDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet5.xsc">
+      <DependentUpon>petrol_otomasyonDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet5.xss">
+      <DependentUpon>petrol_otomasyonDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet6.xsc">
+      <DependentUpon>petrol_otomasyonDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet6.xss">
+      <DependentUpon>petrol_otomasyonDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet7.xsc">
+      <DependentUpon>petrol_otomasyonDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet7.xss">
+      <DependentUpon>petrol_otomasyonDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet8.xsc">
+      <DependentUpon>petrol_otomasyonDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet8.xss">
+      <DependentUpon>petrol_otomasyonDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet9.xsc">
+      <DependentUpon>petrol_otomasyonDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet9.xss">
+      <DependentUpon>petrol_otomasyonDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petrol.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depo.jpeg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
