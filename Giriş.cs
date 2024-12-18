@@ -40,7 +40,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 if (oku.Read())
                 {
                     genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
+                  
                     personel personelform = new personel();
                     personelform.Show();
                     this.Hide();
@@ -85,7 +85,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 if (oku.Read())
                 {
                     genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
+                  
                     Kasa Kasaform = new Kasa();
                     Kasaform.Show();
                     this.Hide();
@@ -131,7 +131,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 if (oku.Read())
                 {
                     genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
+                    
                     pompa pompaform = new pompa();
                     pompaform.Show();
                     this.Hide();
@@ -175,7 +175,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 if (oku.Read())
                 {
                     genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
+                   
                     Ürün Ürünform = new Ürün();
                     Ürünform.Show();
                     this.Hide();
@@ -221,7 +221,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 if (oku.Read())
                 {
                     genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
+                    
                     Sube Subeform = new Sube();
                     Subeform.Show();
                     this.Hide();

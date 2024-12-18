@@ -80,6 +80,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>petrol_otomasyonDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="petrol_otomasyonDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="petrol_otomasyonDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petrol_otomasyonDataSet13.xsd</DependentUpon>
+    </Compile>
     <Compile Include="petrol_otomasyonDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,6 +212,50 @@
     </None>
     <None Include="petrol_otomasyonDataSet1.xss">
       <DependentUpon>petrol_otomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet10.xsc">
+      <DependentUpon>petrol_otomasyonDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet10.xss">
+      <DependentUpon>petrol_otomasyonDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet11.xsc">
+      <DependentUpon>petrol_otomasyonDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet11.xss">
+      <DependentUpon>petrol_otomasyonDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet12.xsc">
+      <DependentUpon>petrol_otomasyonDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet12.xss">
+      <DependentUpon>petrol_otomasyonDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet13.xsc">
+      <DependentUpon>petrol_otomasyonDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="petrol_otomasyonDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>petrol_otomasyonDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="petrol_otomasyonDataSet13.xss">
+      <DependentUpon>petrol_otomasyonDataSet13.xsd</DependentUpon>
     </None>
     <None Include="petrol_otomasyonDataSet2.xsc">
       <DependentUpon>petrol_otomasyonDataSet2.xsd</DependentUpon>

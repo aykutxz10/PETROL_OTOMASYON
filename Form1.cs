@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PETROL_OTOMASYON_8_ARALIIK
 {
@@ -21,130 +22,91 @@ namespace PETROL_OTOMASYON_8_ARALIIK
         {
             InitializeComponent();
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("kullanıcı Adı Gİr");
+                ShowMessage("Kullanıcı adı giriniz.");
                 return;
-
-
             }
             if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                MessageBox.Show("şifre gir");
+                ShowMessage("Şifre giriniz.");
                 return;
             }
+
             string kul = textBox1.Text;
             string şifre = textBox2.Text;
+
             try
             {
-                bağlantı.Open();
-                string sorgu = "SELECT * FROM login WHERE kullaniciAdi=@kul AND şifre=@şifre";
-                SqlCommand command = new SqlCommand(sorgu, bağlantı);
-                command.Parameters.AddWithValue("@kul", kul);
-                command.Parameters.AddWithValue("@şifre", şifre);
-                SqlDataReader oku = command.ExecuteReader();
-
-
-
-                if (oku.Read())
+                using (SqlConnection bağlantı = new SqlConnection(@"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;"))
                 {
-                    genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
-                    Giriş Girişform = new Giriş();
-                    Girişform.Show();
+                    bağlantı.Open();
+                    string sorgu = "SELECT * FROM login WHERE kullaniciAdi=@kul AND şifre=@şifre";
+                    using (SqlCommand command = new SqlCommand(sorgu, bağlantı))
+                    {
+                        command.Parameters.AddWithValue("@kul", kul);
+                        command.Parameters.AddWithValue("@şifre", şifre);
+
+                        using (SqlDataReader oku = command.ExecuteReader())
+                        {
+                            if (oku.Read())
+                            {
+                                genel_bilgi = "Hoşgeldin " + oku["kullaniciAdi"].ToString();
+                                string Rol = oku["Rol"].ToString();
+                                NavigateToRole(Rol);
+                            }
+                            else
+                            {
+                                ShowMessage("Kullanıcı adı veya şifre hatalı.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                ShowMessage("Veritabanı hatası: " + sqlEx.Message);
+            }
+            catch (Exception ex)
+            {
+                ShowMessage("Beklenmedik bir hata oluştu: " + ex.Message);
+            }
+        }
+
+        private void NavigateToRole(string role)
+        {
+            switch (role)
+            {
+                case "Kasacı":
+                    ShowMessage(genel_bilgi);
+                    new Kasa().Show();
                     this.Hide();
-
-                }
-                else
-                {
-                    MessageBox.Show("Kullanıcı adı veya şifre hatalı.");
-                }
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("hata");
-            }
-            finally
-            {
-                if (bağlantı.State == System.Data.ConnectionState.Open)
-                {
-                    bağlantı.Close();
-
-
-                }
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
-            {
-                MessageBox.Show("kullanıcı Adı Gİr");
-                return;
-
-            }
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                MessageBox.Show("şifre gir");
-                return;
-            }
-            string kul = textBox1.Text;
-            string şifre = textBox2.Text;
-            try
-            {
-                bağlantı.Open();
-                string sorgu = "SELECT * FROM login WHERE kullaniciAdi=@kul AND şifre=@şifre";
-                SqlCommand command = new SqlCommand(sorgu, bağlantı);
-                command.Parameters.AddWithValue("@kul", kul);
-                command.Parameters.AddWithValue("@şifre", şifre);
-                SqlDataReader oku = command.ExecuteReader();
-
-
-
-                if (oku.Read())
-                {
-                    genel_bilgi = "Hoşgeldin" + oku["kullaniciAdi"].ToString();
-                    MessageBox.Show(genel_bilgi);
-                    Giriş Girişform = new Giriş();
-                    Girişform.Show();
+                    break;
+                case "Pompacı":
+                    ShowMessage(genel_bilgi);
+                    new pompa().Show();
                     this.Hide();
-
-                }
-                else
-                {
-                    MessageBox.Show("Kullanıcı adı veya şifre hatalı.");
-                }
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("hata");
-            }
-            finally
-            {
-                if (bağlantı.State == System.Data.ConnectionState.Open)
-                {
-                    bağlantı.Close();
-
-
-                }
+                    break;
+                case "Yönetici":
+                    ShowMessage(genel_bilgi);
+                    new Giriş().Show();
+                    this.Hide();
+                    break;
+                default:
+                    ShowMessage("Geçersiz rol.");
+                    break;
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void ShowMessage(string message)
         {
-
+            MessageBox.Show(message);
         }
     }
-    
 }
+
+
+

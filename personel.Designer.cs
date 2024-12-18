@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.personelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ısimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soyisimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pozisyonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesaiBitisSaatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saatlikUcretDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personellerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.petrol_otomasyonDataSet8 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet8();
             this.personellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.petrol_otomasyonDataSet = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +56,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.personellerTableAdapter = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSetTableAdapters.PersonellerTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -58,24 +68,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.petrol_otomasyonDataSet8 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet8();
-            this.personellerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.personellerTableAdapter1 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet8TableAdapters.PersonellerTableAdapter();
-            this.personelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ısimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soyisimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pozisyonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mesaiBitisSaatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saatlikUcretDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -111,7 +112,89 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(785, 208);
             this.dataGridView1.TabIndex = 11;
-            
+            // 
+            // personelIDDataGridViewTextBoxColumn
+            // 
+            this.personelIDDataGridViewTextBoxColumn.DataPropertyName = "PersonelID";
+            this.personelIDDataGridViewTextBoxColumn.HeaderText = "PersonelID";
+            this.personelIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.personelIDDataGridViewTextBoxColumn.Name = "personelIDDataGridViewTextBoxColumn";
+            this.personelIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.personelIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ısimDataGridViewTextBoxColumn
+            // 
+            this.ısimDataGridViewTextBoxColumn.DataPropertyName = "Isim";
+            this.ısimDataGridViewTextBoxColumn.HeaderText = "Isim";
+            this.ısimDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ısimDataGridViewTextBoxColumn.Name = "ısimDataGridViewTextBoxColumn";
+            this.ısimDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // soyisimDataGridViewTextBoxColumn
+            // 
+            this.soyisimDataGridViewTextBoxColumn.DataPropertyName = "Soyisim";
+            this.soyisimDataGridViewTextBoxColumn.HeaderText = "Soyisim";
+            this.soyisimDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soyisimDataGridViewTextBoxColumn.Name = "soyisimDataGridViewTextBoxColumn";
+            this.soyisimDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pozisyonDataGridViewTextBoxColumn
+            // 
+            this.pozisyonDataGridViewTextBoxColumn.DataPropertyName = "Pozisyon";
+            this.pozisyonDataGridViewTextBoxColumn.HeaderText = "Pozisyon";
+            this.pozisyonDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pozisyonDataGridViewTextBoxColumn.Name = "pozisyonDataGridViewTextBoxColumn";
+            this.pozisyonDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // mesaiBaslangicSaatiDataGridViewTextBoxColumn
+            // 
+            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.DataPropertyName = "MesaiBaslangicSaati";
+            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.HeaderText = "MesaiBaslangicSaati";
+            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.Name = "mesaiBaslangicSaatiDataGridViewTextBoxColumn";
+            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // mesaiBitisSaatiDataGridViewTextBoxColumn
+            // 
+            this.mesaiBitisSaatiDataGridViewTextBoxColumn.DataPropertyName = "MesaiBitisSaati";
+            this.mesaiBitisSaatiDataGridViewTextBoxColumn.HeaderText = "MesaiBitisSaati";
+            this.mesaiBitisSaatiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mesaiBitisSaatiDataGridViewTextBoxColumn.Name = "mesaiBitisSaatiDataGridViewTextBoxColumn";
+            this.mesaiBitisSaatiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maasDataGridViewTextBoxColumn
+            // 
+            this.maasDataGridViewTextBoxColumn.DataPropertyName = "Maas";
+            this.maasDataGridViewTextBoxColumn.HeaderText = "Maas";
+            this.maasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maasDataGridViewTextBoxColumn.Name = "maasDataGridViewTextBoxColumn";
+            this.maasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // saatlikUcretDataGridViewTextBoxColumn
+            // 
+            this.saatlikUcretDataGridViewTextBoxColumn.DataPropertyName = "SaatlikUcret";
+            this.saatlikUcretDataGridViewTextBoxColumn.HeaderText = "SaatlikUcret";
+            this.saatlikUcretDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.saatlikUcretDataGridViewTextBoxColumn.Name = "saatlikUcretDataGridViewTextBoxColumn";
+            this.saatlikUcretDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // subeIDDataGridViewTextBoxColumn
+            // 
+            this.subeIDDataGridViewTextBoxColumn.DataPropertyName = "SubeID";
+            this.subeIDDataGridViewTextBoxColumn.HeaderText = "SubeID";
+            this.subeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.subeIDDataGridViewTextBoxColumn.Name = "subeIDDataGridViewTextBoxColumn";
+            this.subeIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // personellerBindingSource1
+            // 
+            this.personellerBindingSource1.DataMember = "Personeller";
+            this.personellerBindingSource1.DataSource = this.petrol_otomasyonDataSet8;
+            // 
+            // petrol_otomasyonDataSet8
+            // 
+            this.petrol_otomasyonDataSet8.DataSetName = "petrol_otomasyonDataSet8";
+            this.petrol_otomasyonDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // personellerBindingSource
             // 
@@ -229,26 +312,14 @@
             // 
             this.personellerTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(330, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 36);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "GİRİŞ";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.WindowText;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(330, 271);
+            this.button2.Location = new System.Drawing.Point(330, 229);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 36);
+            this.button2.Size = new System.Drawing.Size(89, 47);
             this.button2.TabIndex = 28;
             this.button2.Text = "EKLE";
             this.button2.UseVisualStyleBackColor = false;
@@ -259,21 +330,22 @@
             this.button3.BackColor = System.Drawing.SystemColors.WindowText;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(330, 313);
+            this.button3.Location = new System.Drawing.Point(330, 282);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 36);
+            this.button3.Size = new System.Drawing.Size(89, 48);
             this.button3.TabIndex = 29;
             this.button3.Text = "SİL";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.WindowText;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button4.ForeColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(330, 355);
+            this.button4.Location = new System.Drawing.Point(330, 336);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 36);
+            this.button4.Size = new System.Drawing.Size(89, 47);
             this.button4.TabIndex = 30;
             this.button4.Text = "LİSTELE";
             this.button4.UseVisualStyleBackColor = false;
@@ -283,12 +355,13 @@
             this.button5.BackColor = System.Drawing.SystemColors.WindowText;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(330, 402);
+            this.button5.Location = new System.Drawing.Point(330, 391);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 36);
+            this.button5.Size = new System.Drawing.Size(89, 47);
             this.button5.TabIndex = 31;
             this.button5.Text = "GÜNCELLE";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label8
             // 
@@ -296,7 +369,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Highlight;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(515, 247);
+            this.label8.Location = new System.Drawing.Point(564, 247);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(186, 31);
             this.label8.TabIndex = 32;
@@ -305,7 +378,7 @@
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox9.Location = new System.Drawing.Point(470, 296);
+            this.textBox9.Location = new System.Drawing.Point(510, 292);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(287, 34);
             this.textBox9.TabIndex = 33;
@@ -316,7 +389,7 @@
             this.button6.BackColor = System.Drawing.SystemColors.Highlight;
             this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(559, 353);
+            this.button6.Location = new System.Drawing.Point(608, 345);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(103, 38);
             this.button6.TabIndex = 34;
@@ -367,92 +440,30 @@
             this.textBox8.Size = new System.Drawing.Size(171, 22);
             this.textBox8.TabIndex = 38;
             // 
-            // petrol_otomasyonDataSet8
-            // 
-            this.petrol_otomasyonDataSet8.DataSetName = "petrol_otomasyonDataSet8";
-            this.petrol_otomasyonDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // personellerBindingSource1
-            // 
-            this.personellerBindingSource1.DataMember = "Personeller";
-            this.personellerBindingSource1.DataSource = this.petrol_otomasyonDataSet8;
-            // 
             // personellerTableAdapter1
             // 
             this.personellerTableAdapter1.ClearBeforeFill = true;
             // 
-            // personelIDDataGridViewTextBoxColumn
+            // button7
             // 
-            this.personelIDDataGridViewTextBoxColumn.DataPropertyName = "PersonelID";
-            this.personelIDDataGridViewTextBoxColumn.HeaderText = "PersonelID";
-            this.personelIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.personelIDDataGridViewTextBoxColumn.Name = "personelIDDataGridViewTextBoxColumn";
-            this.personelIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.personelIDDataGridViewTextBoxColumn.Width = 125;
+            this.button7.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(705, 396);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(92, 51);
+            this.button7.TabIndex = 41;
+            this.button7.Text = "GERİ";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // ısimDataGridViewTextBoxColumn
+            // textBox10
             // 
-            this.ısimDataGridViewTextBoxColumn.DataPropertyName = "Isim";
-            this.ısimDataGridViewTextBoxColumn.HeaderText = "Isim";
-            this.ısimDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ısimDataGridViewTextBoxColumn.Name = "ısimDataGridViewTextBoxColumn";
-            this.ısimDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // soyisimDataGridViewTextBoxColumn
-            // 
-            this.soyisimDataGridViewTextBoxColumn.DataPropertyName = "Soyisim";
-            this.soyisimDataGridViewTextBoxColumn.HeaderText = "Soyisim";
-            this.soyisimDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soyisimDataGridViewTextBoxColumn.Name = "soyisimDataGridViewTextBoxColumn";
-            this.soyisimDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pozisyonDataGridViewTextBoxColumn
-            // 
-            this.pozisyonDataGridViewTextBoxColumn.DataPropertyName = "Pozisyon";
-            this.pozisyonDataGridViewTextBoxColumn.HeaderText = "Pozisyon";
-            this.pozisyonDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pozisyonDataGridViewTextBoxColumn.Name = "pozisyonDataGridViewTextBoxColumn";
-            this.pozisyonDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // mesaiBaslangicSaatiDataGridViewTextBoxColumn
-            // 
-            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.DataPropertyName = "MesaiBaslangicSaati";
-            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.HeaderText = "MesaiBaslangicSaati";
-            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.Name = "mesaiBaslangicSaatiDataGridViewTextBoxColumn";
-            this.mesaiBaslangicSaatiDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // mesaiBitisSaatiDataGridViewTextBoxColumn
-            // 
-            this.mesaiBitisSaatiDataGridViewTextBoxColumn.DataPropertyName = "MesaiBitisSaati";
-            this.mesaiBitisSaatiDataGridViewTextBoxColumn.HeaderText = "MesaiBitisSaati";
-            this.mesaiBitisSaatiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mesaiBitisSaatiDataGridViewTextBoxColumn.Name = "mesaiBitisSaatiDataGridViewTextBoxColumn";
-            this.mesaiBitisSaatiDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maasDataGridViewTextBoxColumn
-            // 
-            this.maasDataGridViewTextBoxColumn.DataPropertyName = "Maas";
-            this.maasDataGridViewTextBoxColumn.HeaderText = "Maas";
-            this.maasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maasDataGridViewTextBoxColumn.Name = "maasDataGridViewTextBoxColumn";
-            this.maasDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // saatlikUcretDataGridViewTextBoxColumn
-            // 
-            this.saatlikUcretDataGridViewTextBoxColumn.DataPropertyName = "SaatlikUcret";
-            this.saatlikUcretDataGridViewTextBoxColumn.HeaderText = "SaatlikUcret";
-            this.saatlikUcretDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.saatlikUcretDataGridViewTextBoxColumn.Name = "saatlikUcretDataGridViewTextBoxColumn";
-            this.saatlikUcretDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // subeIDDataGridViewTextBoxColumn
-            // 
-            this.subeIDDataGridViewTextBoxColumn.DataPropertyName = "SubeID";
-            this.subeIDDataGridViewTextBoxColumn.HeaderText = "SubeID";
-            this.subeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.subeIDDataGridViewTextBoxColumn.Name = "subeIDDataGridViewTextBoxColumn";
-            this.subeIDDataGridViewTextBoxColumn.Width = 125;
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox10.Location = new System.Drawing.Point(435, 396);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(46, 34);
+            this.textBox10.TabIndex = 42;
             // 
             // personel
             // 
@@ -460,6 +471,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label9);
@@ -471,7 +484,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -489,11 +501,11 @@
             this.Text = "personel";
             this.Load += new System.EventHandler(this.personel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personellerBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,7 +529,6 @@
         private petrol_otomasyonDataSet petrol_otomasyonDataSet;
         private System.Windows.Forms.BindingSource personellerBindingSource;
         private petrol_otomasyonDataSetTableAdapters.PersonellerTableAdapter personellerTableAdapter;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -542,5 +553,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn saatlikUcretDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox10;
     }
 }

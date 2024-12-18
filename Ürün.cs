@@ -28,7 +28,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             ÜrünTable.Columns.Add("ürünFiyati", typeof(string));
             ÜrünTable.Columns.Add("ürünTipi", typeof(string));
             ÜrünTable.Columns.Add("stokMiktari", typeof(string));
-           
+
 
             // DataGridView'e veri kaynağını bağlıyoruz
             dataGridView1.DataSource = ÜrünTable;
@@ -49,6 +49,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+
         {
             // TextBox'lardan verileri alıyoruz
             string ürünAdi = textBox1.Text;
@@ -57,18 +58,64 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             string ürünTipi = textBox4.Text;
             string stokMiktari = textBox5.Text;
 
+            // SQL bağlantı dizesi (veritabanınızın doğru bağlantı bilgileriyle değiştirilmelidir)
+            string connectionString = @"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;";
 
-            // DataTable'a yeni satır ekliyoruz
-            ÜrünTable.Rows.Add(ürünAdi, ürünMarka, ürünFiyati, ürünTipi, stokMiktari);
+            // Veritabanı bağlantısı kurma
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    // Veritabanı bağlantısını açıyoruz
+                    baglanti.Open();
 
-            // TextBox'ları temizliyoruz (isteğe bağlı)
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
+                    // SQL sorgusu: Ürünü eklemek için INSERT komutu
+                    string sorgu = "INSERT INTO ürün (ÜrünAdi, ÜrünMarka, ÜrünFiyati, ÜrünTipi, StokMiktari) " +
+                                   "VALUES (@ÜrünAdi, @ÜrünMarka, @ÜrünFiyati, @ÜrünTipi, @StokMiktari)";
 
+                    // SQL komutunu oluşturuyoruz
+                    using (SqlCommand cmd = new SqlCommand(sorgu, baglanti))
+                    {
+                        // Parametreleri komuta ekliyoruz
+                        cmd.Parameters.AddWithValue("@ÜrünAdi", ürünAdi);
+                        cmd.Parameters.AddWithValue("@ÜrünMarka", ürünMarka);
+                        cmd.Parameters.AddWithValue("@ÜrünFiyati", ürünFiyati);
+                        cmd.Parameters.AddWithValue("@ÜrünTipi", ürünTipi);
+                        cmd.Parameters.AddWithValue("@StokMiktari", stokMiktari);
+
+                        // Komutu çalıştırıyoruz
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Eğer herhangi bir satır etkilendiyse, ürün başarıyla eklendi
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Ürün başarıyla eklendi!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ürün eklenirken bir hata oluştu.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Hata oluşursa, hata mesajını gösteriyoruz
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+                finally
+                {
+                    // TextBox'ları temizliyoruz
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                }
+            }
         }
+
+
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -82,9 +129,9 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             try
             {
                 // SQL sorgusunu oluşturuyoruz
-                string sorgu = "SELECT * FROM ürün WHERE ürünAdi LIKE @isim";
+                string sorgu = "SELECT * FROM ürün WHERE ürünAdi LIKE @ürünAdi";
                 SqlCommand command = new SqlCommand(sorgu, bağlantı);
-                command.Parameters.AddWithValue("@isim", "%" + searchText + "%"); // LIKE operatörü ile esnek arama
+                command.Parameters.AddWithValue("@ürünAdi", "%" + searchText + "%"); // LIKE operatörü ile esnek arama
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                 DataTable dt = new DataTable(); // Veritabanından alınan veriyi tutacak DataTable
@@ -98,6 +145,132 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 MessageBox.Show("Hata: " + ex.Message); // Hata mesajı gösteriyoruz
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Giriş Girişform = new Giriş();
+            Girişform.Show();  // Giriş formunu göster
+            this.Hide();        // Ana sayfayı gizle
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // ÜrünID'yi TextBox'dan alıyoruz (silinecek ürünün ID'si)
+            int ürün_id = Convert.ToInt32(textBox1.Text);  // ÜrünID'yi uygun bir TextBox'dan alabilirsiniz
+
+            // SQL bağlantı dizesi
+            string connectionString = @"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;";
+
+            // Veritabanı bağlantısı kurma
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    // Veritabanı bağlantısını açıyoruz
+                    baglanti.Open();
+
+                    // SQL sorgusu: Ürünü silmek için DELETE komutu
+                    string sorgu = "DELETE FROM ürün WHERE ürün_id = @ürün_id";
+
+                    // SQL komutunu oluşturuyoruz
+                    using (SqlCommand cmd = new SqlCommand(sorgu, baglanti))
+                    {
+                        // Parametreyi komuta ekliyoruz
+                        cmd.Parameters.AddWithValue("@ürün_id", ürün_id);
+
+                        // Komutu çalıştırıyoruz
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Eğer herhangi bir satır etkilendiyse, ürün başarıyla silindi
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Ürün başarıyla silindi!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Silinecek ürün bulunamadı.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Hata oluşursa, hata mesajını gösteriyoruz
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string ürünAdi = textBox1.Text;
+            string ürünMarka = textBox2.Text;
+            string ürünTipi = textBox4.Text;
+            string stokMiktari = textBox5.Text;  // Stok miktarı sayısal olmalı
+
+            int ürün_id;
+            if (!int.TryParse(textBox1.Text, out ürün_id))  // Ürün ID'si doğru TextBox'tan alınmalı
+            {
+                MessageBox.Show("Ürün ID'si geçerli bir sayı olmalıdır.");
+                return;
+            }
+
+            decimal ürünFiyatiDecimal;
+            if (!decimal.TryParse(textBox3.Text, out ürünFiyatiDecimal))  // Fiyatı decimal olarak almak
+            {
+                MessageBox.Show("Geçerli bir ürün fiyatı girin.");
+                return;
+            }
+
+            int stokMiktariInt;
+            if (!int.TryParse(stokMiktari, out stokMiktariInt))  // Stok miktarı sayısal olmalı
+            {
+                MessageBox.Show("Geçerli bir stok miktarı girin.");
+                return;
+            }
+
+            string connectionString = @"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;";
+
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    baglanti.Open();
+
+                    string sorgu = "UPDATE ürün SET ÜrünAdi = @ÜrünAdi, ÜrünMarka = @ÜrünMarka, ÜrünFiyati = @ÜrünFiyati, " +
+                                   "ÜrünTipi = @ÜrünTipi, StokMiktari = @StokMiktari WHERE ürün_id = @ürün_id";
+
+                    using (SqlCommand cmd = new SqlCommand(sorgu, baglanti))
+                    {
+                        cmd.Parameters.AddWithValue("@ÜrünAdi", ürünAdi);
+                        cmd.Parameters.AddWithValue("@ÜrünMarka", ürünMarka);
+                        cmd.Parameters.AddWithValue("@ÜrünFiyati", ürünFiyatiDecimal);
+                        cmd.Parameters.AddWithValue("@ÜrünTipi", ürünTipi);
+                        cmd.Parameters.AddWithValue("@StokMiktari", stokMiktariInt);
+                        cmd.Parameters.AddWithValue("@ürün_id", ürün_id);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Ürün başarıyla güncellendi!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Güncellenen ürün bulunamadı.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
+
+        }
     }
-    
+
 }
+
+
+    
+

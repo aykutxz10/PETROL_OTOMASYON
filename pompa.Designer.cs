@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pompakeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.petrol_otomasyonDataSet5 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet5();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,31 +52,37 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.petrol_otomasyonDataSet5 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet5();
-            this.pompakeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pompakeTableAdapter = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet5TableAdapters.PompakeTableAdapter();
             this.petrol_otomasyonDataSet6 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet6();
             this.pompakeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pompakeTableAdapter1 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet6TableAdapters.PompakeTableAdapter();
-            this.pompaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personelAdıDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plakaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tutarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yakıtMiktarıDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yakıtTipiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ödemeTürüDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.petrol_otomasyonDataSet10 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet10();
+            this.yakitVerileriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yakitVerileriTableAdapter = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet10TableAdapters.YakitVerileriTableAdapter();
+            this.ıDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pompaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personelAdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plakaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tutarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yakitMiktariDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yakitTipiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.odemeTuruDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yakitStokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pompakeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pompaCihazlariBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pompakeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pompakeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakitVerileriBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -82,15 +90,17 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ıDDataGridViewTextBoxColumn,
             this.pompaIDDataGridViewTextBoxColumn,
-            this.personelAdıDataGridViewTextBoxColumn,
+            this.personelAdiDataGridViewTextBoxColumn,
             this.plakaDataGridViewTextBoxColumn,
             this.tutarDataGridViewTextBoxColumn,
-            this.yakıtMiktarıDataGridViewTextBoxColumn,
-            this.yakıtTipiDataGridViewTextBoxColumn,
-            this.ödemeTürüDataGridViewTextBoxColumn,
-            this.subeIDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pompakeBindingSource;
+            this.yakitMiktariDataGridViewTextBoxColumn,
+            this.yakitTipiDataGridViewTextBoxColumn,
+            this.odemeTuruDataGridViewTextBoxColumn,
+            this.subeIDDataGridViewTextBoxColumn,
+            this.yakitStokDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.yakitVerileriBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 295);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -98,6 +108,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(781, 149);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // pompakeBindingSource
+            // 
+            this.pompakeBindingSource.DataMember = "Pompake";
+            this.pompakeBindingSource.DataSource = this.petrol_otomasyonDataSet5;
+            // 
+            // petrol_otomasyonDataSet5
+            // 
+            this.petrol_otomasyonDataSet5.DataSetName = "petrol_otomasyonDataSet5";
+            this.petrol_otomasyonDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox1
             // 
@@ -231,6 +251,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "YAKIT VER";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // petrol_otomasyonDataSet4
             // 
@@ -292,16 +313,6 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // petrol_otomasyonDataSet5
-            // 
-            this.petrol_otomasyonDataSet5.DataSetName = "petrol_otomasyonDataSet5";
-            this.petrol_otomasyonDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pompakeBindingSource
-            // 
-            this.pompakeBindingSource.DataMember = "Pompake";
-            this.pompakeBindingSource.DataSource = this.petrol_otomasyonDataSet5;
-            // 
             // pompakeTableAdapter
             // 
             this.pompakeTableAdapter.ClearBeforeFill = true;
@@ -319,70 +330,6 @@
             // pompakeTableAdapter1
             // 
             this.pompakeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pompaIDDataGridViewTextBoxColumn
-            // 
-            this.pompaIDDataGridViewTextBoxColumn.DataPropertyName = "PompaID";
-            this.pompaIDDataGridViewTextBoxColumn.HeaderText = "PompaID";
-            this.pompaIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pompaIDDataGridViewTextBoxColumn.Name = "pompaIDDataGridViewTextBoxColumn";
-            this.pompaIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // personelAdıDataGridViewTextBoxColumn
-            // 
-            this.personelAdıDataGridViewTextBoxColumn.DataPropertyName = "Personel Adı";
-            this.personelAdıDataGridViewTextBoxColumn.HeaderText = "Personel Adı";
-            this.personelAdıDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.personelAdıDataGridViewTextBoxColumn.Name = "personelAdıDataGridViewTextBoxColumn";
-            this.personelAdıDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // plakaDataGridViewTextBoxColumn
-            // 
-            this.plakaDataGridViewTextBoxColumn.DataPropertyName = "Plaka";
-            this.plakaDataGridViewTextBoxColumn.HeaderText = "Plaka";
-            this.plakaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.plakaDataGridViewTextBoxColumn.Name = "plakaDataGridViewTextBoxColumn";
-            this.plakaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tutarDataGridViewTextBoxColumn
-            // 
-            this.tutarDataGridViewTextBoxColumn.DataPropertyName = "Tutar";
-            this.tutarDataGridViewTextBoxColumn.HeaderText = "Tutar";
-            this.tutarDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tutarDataGridViewTextBoxColumn.Name = "tutarDataGridViewTextBoxColumn";
-            this.tutarDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // yakıtMiktarıDataGridViewTextBoxColumn
-            // 
-            this.yakıtMiktarıDataGridViewTextBoxColumn.DataPropertyName = "Yakıt Miktarı";
-            this.yakıtMiktarıDataGridViewTextBoxColumn.HeaderText = "Yakıt Miktarı";
-            this.yakıtMiktarıDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.yakıtMiktarıDataGridViewTextBoxColumn.Name = "yakıtMiktarıDataGridViewTextBoxColumn";
-            this.yakıtMiktarıDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // yakıtTipiDataGridViewTextBoxColumn
-            // 
-            this.yakıtTipiDataGridViewTextBoxColumn.DataPropertyName = "Yakıt Tipi";
-            this.yakıtTipiDataGridViewTextBoxColumn.HeaderText = "Yakıt Tipi";
-            this.yakıtTipiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.yakıtTipiDataGridViewTextBoxColumn.Name = "yakıtTipiDataGridViewTextBoxColumn";
-            this.yakıtTipiDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ödemeTürüDataGridViewTextBoxColumn
-            // 
-            this.ödemeTürüDataGridViewTextBoxColumn.DataPropertyName = "Ödeme Türü";
-            this.ödemeTürüDataGridViewTextBoxColumn.HeaderText = "Ödeme Türü";
-            this.ödemeTürüDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ödemeTürüDataGridViewTextBoxColumn.Name = "ödemeTürüDataGridViewTextBoxColumn";
-            this.ödemeTürüDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // subeIDDataGridViewTextBoxColumn
-            // 
-            this.subeIDDataGridViewTextBoxColumn.DataPropertyName = "Sube ID";
-            this.subeIDDataGridViewTextBoxColumn.HeaderText = "Sube ID";
-            this.subeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.subeIDDataGridViewTextBoxColumn.Name = "subeIDDataGridViewTextBoxColumn";
-            this.subeIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // textBox7
             // 
@@ -408,12 +355,121 @@
             this.textBox9.Size = new System.Drawing.Size(217, 27);
             this.textBox9.TabIndex = 20;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(7, 257);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(106, 32);
+            this.button6.TabIndex = 41;
+            this.button6.Text = "GERİ";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // petrol_otomasyonDataSet10
+            // 
+            this.petrol_otomasyonDataSet10.DataSetName = "petrol_otomasyonDataSet10";
+            this.petrol_otomasyonDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // yakitVerileriBindingSource
+            // 
+            this.yakitVerileriBindingSource.DataMember = "YakitVerileri";
+            this.yakitVerileriBindingSource.DataSource = this.petrol_otomasyonDataSet10;
+            // 
+            // yakitVerileriTableAdapter
+            // 
+            this.yakitVerileriTableAdapter.ClearBeforeFill = true;
+            // 
+            // ıDDataGridViewTextBoxColumn
+            // 
+            this.ıDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.ıDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.ıDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ıDDataGridViewTextBoxColumn.Name = "ıDDataGridViewTextBoxColumn";
+            this.ıDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ıDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pompaIDDataGridViewTextBoxColumn
+            // 
+            this.pompaIDDataGridViewTextBoxColumn.DataPropertyName = "PompaID";
+            this.pompaIDDataGridViewTextBoxColumn.HeaderText = "PompaID";
+            this.pompaIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pompaIDDataGridViewTextBoxColumn.Name = "pompaIDDataGridViewTextBoxColumn";
+            this.pompaIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // personelAdiDataGridViewTextBoxColumn
+            // 
+            this.personelAdiDataGridViewTextBoxColumn.DataPropertyName = "PersonelAdi";
+            this.personelAdiDataGridViewTextBoxColumn.HeaderText = "PersonelAdi";
+            this.personelAdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.personelAdiDataGridViewTextBoxColumn.Name = "personelAdiDataGridViewTextBoxColumn";
+            this.personelAdiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // plakaDataGridViewTextBoxColumn
+            // 
+            this.plakaDataGridViewTextBoxColumn.DataPropertyName = "Plaka";
+            this.plakaDataGridViewTextBoxColumn.HeaderText = "Plaka";
+            this.plakaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.plakaDataGridViewTextBoxColumn.Name = "plakaDataGridViewTextBoxColumn";
+            this.plakaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tutarDataGridViewTextBoxColumn
+            // 
+            this.tutarDataGridViewTextBoxColumn.DataPropertyName = "Tutar";
+            this.tutarDataGridViewTextBoxColumn.HeaderText = "Tutar";
+            this.tutarDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tutarDataGridViewTextBoxColumn.Name = "tutarDataGridViewTextBoxColumn";
+            this.tutarDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // yakitMiktariDataGridViewTextBoxColumn
+            // 
+            this.yakitMiktariDataGridViewTextBoxColumn.DataPropertyName = "YakitMiktari";
+            this.yakitMiktariDataGridViewTextBoxColumn.HeaderText = "YakitMiktari";
+            this.yakitMiktariDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.yakitMiktariDataGridViewTextBoxColumn.Name = "yakitMiktariDataGridViewTextBoxColumn";
+            this.yakitMiktariDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // yakitTipiDataGridViewTextBoxColumn
+            // 
+            this.yakitTipiDataGridViewTextBoxColumn.DataPropertyName = "YakitTipi";
+            this.yakitTipiDataGridViewTextBoxColumn.HeaderText = "YakitTipi";
+            this.yakitTipiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.yakitTipiDataGridViewTextBoxColumn.Name = "yakitTipiDataGridViewTextBoxColumn";
+            this.yakitTipiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // odemeTuruDataGridViewTextBoxColumn
+            // 
+            this.odemeTuruDataGridViewTextBoxColumn.DataPropertyName = "OdemeTuru";
+            this.odemeTuruDataGridViewTextBoxColumn.HeaderText = "OdemeTuru";
+            this.odemeTuruDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.odemeTuruDataGridViewTextBoxColumn.Name = "odemeTuruDataGridViewTextBoxColumn";
+            this.odemeTuruDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // subeIDDataGridViewTextBoxColumn
+            // 
+            this.subeIDDataGridViewTextBoxColumn.DataPropertyName = "SubeID";
+            this.subeIDDataGridViewTextBoxColumn.HeaderText = "SubeID";
+            this.subeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.subeIDDataGridViewTextBoxColumn.Name = "subeIDDataGridViewTextBoxColumn";
+            this.subeIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // yakitStokDataGridViewTextBoxColumn
+            // 
+            this.yakitStokDataGridViewTextBoxColumn.DataPropertyName = "YakitStok";
+            this.yakitStokDataGridViewTextBoxColumn.HeaderText = "YakitStok";
+            this.yakitStokDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.yakitStokDataGridViewTextBoxColumn.Name = "yakitStokDataGridViewTextBoxColumn";
+            this.yakitStokDataGridViewTextBoxColumn.Width = 125;
+            // 
             // pompa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(795, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
@@ -439,13 +495,15 @@
             this.Text = "pompa";
             this.Load += new System.EventHandler(this.pompa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pompakeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pompaCihazlariBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pompakeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pompakeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yakitVerileriBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,16 +538,22 @@
         private petrol_otomasyonDataSet6 petrol_otomasyonDataSet6;
         private System.Windows.Forms.BindingSource pompakeBindingSource1;
         private petrol_otomasyonDataSet6TableAdapters.PompakeTableAdapter pompakeTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pompaIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personelAdıDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plakaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tutarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yakıtMiktarıDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yakıtTipiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ödemeTürüDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subeIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button6;
+        private petrol_otomasyonDataSet10 petrol_otomasyonDataSet10;
+        private System.Windows.Forms.BindingSource yakitVerileriBindingSource;
+        private petrol_otomasyonDataSet10TableAdapters.YakitVerileriTableAdapter yakitVerileriTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ıDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pompaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personelAdiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plakaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tutarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yakitMiktariDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yakitTipiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn odemeTuruDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yakitStokDataGridViewTextBoxColumn;
     }
 }

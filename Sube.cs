@@ -55,5 +55,12 @@ namespace PETROL_OTOMASYON_8_ARALIIK
                 MessageBox.Show("Hata: " + ex.Message); // Hata mesajı gösteriyoruz
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Giriş Girişform = new Giriş();
+            Girişform.Show();  // Giriş formunu göster
+            this.Hide();        // Ana sayfayı gizle
+        }
     }
 }

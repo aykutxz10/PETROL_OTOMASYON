@@ -49,24 +49,25 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ürünBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.petrol_otomasyonDataSet3 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet3();
-            this.ürünTableAdapter = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet3TableAdapters.ürünTableAdapter();
-            this.button5 = new System.Windows.Forms.Button();
-            this.petrol_otomasyonDataSet9 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet9();
-            this.ürünBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.ürünTableAdapter1 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet9TableAdapters.ürünTableAdapter();
             this.ürünidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ürünAdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ürünMarkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ürünFiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ürünTipiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stokMiktariDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ürünBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.petrol_otomasyonDataSet9 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet9();
+            this.ürünBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.petrol_otomasyonDataSet3 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet3();
+            this.ürünTableAdapter = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet3TableAdapters.ürünTableAdapter();
+            this.button5 = new System.Windows.Forms.Button();
+            this.ürünTableAdapter1 = new PETROL_OTOMASYON_8_ARALIIK.petrol_otomasyonDataSet9TableAdapters.ürünTableAdapter();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ürünBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ürünBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ürünBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -100,6 +101,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.button2.TabIndex = 24;
             this.button2.Text = "SİL";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -124,6 +126,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.button4.TabIndex = 26;
             this.button4.Text = "GÜNCELLE";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -228,7 +231,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.label6.BackColor = System.Drawing.SystemColors.Highlight;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(356, 28);
+            this.label6.Location = new System.Drawing.Point(410, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(223, 31);
             this.label6.TabIndex = 37;
@@ -252,47 +255,6 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(435, 284);
             this.dataGridView1.TabIndex = 38;
-            // 
-            // ürünBindingSource
-            // 
-            this.ürünBindingSource.DataMember = "ürün";
-            this.ürünBindingSource.DataSource = this.petrol_otomasyonDataSet3;
-            // 
-            // petrol_otomasyonDataSet3
-            // 
-            this.petrol_otomasyonDataSet3.DataSetName = "petrol_otomasyonDataSet3";
-            this.petrol_otomasyonDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ürünTableAdapter
-            // 
-            this.ürünTableAdapter.ClearBeforeFill = true;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.WindowText;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(665, 71);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 38);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "ARA";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // petrol_otomasyonDataSet9
-            // 
-            this.petrol_otomasyonDataSet9.DataSetName = "petrol_otomasyonDataSet9";
-            this.petrol_otomasyonDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ürünBindingSource1
-            // 
-            this.ürünBindingSource1.DataMember = "ürün";
-            this.ürünBindingSource1.DataSource = this.petrol_otomasyonDataSet9;
-            // 
-            // ürünTableAdapter1
-            // 
-            this.ürünTableAdapter1.ClearBeforeFill = true;
             // 
             // ürünidDataGridViewTextBoxColumn
             // 
@@ -343,12 +305,67 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.stokMiktariDataGridViewTextBoxColumn.Name = "stokMiktariDataGridViewTextBoxColumn";
             this.stokMiktariDataGridViewTextBoxColumn.Width = 125;
             // 
+            // ürünBindingSource1
+            // 
+            this.ürünBindingSource1.DataMember = "ürün";
+            this.ürünBindingSource1.DataSource = this.petrol_otomasyonDataSet9;
+            // 
+            // petrol_otomasyonDataSet9
+            // 
+            this.petrol_otomasyonDataSet9.DataSetName = "petrol_otomasyonDataSet9";
+            this.petrol_otomasyonDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ürünBindingSource
+            // 
+            this.ürünBindingSource.DataMember = "ürün";
+            this.ürünBindingSource.DataSource = this.petrol_otomasyonDataSet3;
+            // 
+            // petrol_otomasyonDataSet3
+            // 
+            this.petrol_otomasyonDataSet3.DataSetName = "petrol_otomasyonDataSet3";
+            this.petrol_otomasyonDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ürünTableAdapter
+            // 
+            this.ürünTableAdapter.ClearBeforeFill = true;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button5.ForeColor = System.Drawing.Color.Red;
+            this.button5.Location = new System.Drawing.Point(665, 71);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(123, 38);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "ARA";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // ürünTableAdapter1
+            // 
+            this.ürünTableAdapter1.ClearBeforeFill = true;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(16, 390);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(106, 48);
+            this.button6.TabIndex = 40;
+            this.button6.Text = "GERİ";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Ürün
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
@@ -371,10 +388,10 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             this.Text = "Ürün";
             this.Load += new System.EventHandler(this.Ürün_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ürünBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ürünBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petrol_otomasyonDataSet9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ürünBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +429,6 @@ namespace PETROL_OTOMASYON_8_ARALIIK
         private System.Windows.Forms.DataGridViewTextBoxColumn ürünFiyatiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ürünTipiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stokMiktariDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button6;
     }
 }

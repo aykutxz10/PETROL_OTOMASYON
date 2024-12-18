@@ -31,13 +31,13 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             personelTable.Columns.Add("Maas", typeof(string));
             personelTable.Columns.Add("SubeID", typeof(string));
 
-           
+
         }
 
         // Ekleme işlemi
         private void button2_Click(object sender, EventArgs e)
         {
-            // TextBox'lardan verileri alıyoruz
+            // TextBox değerlerini al
             string Isim = textBox1.Text;
             string Soyisim = textBox2.Text;
             string Pozisyon = textBox3.Text;
@@ -45,22 +45,53 @@ namespace PETROL_OTOMASYON_8_ARALIIK
             string MesaiBitisSaati = textBox5.Text;
             string Maas = textBox6.Text;
             string SaatlikUcret = textBox7.Text;
-            string SubeID = textBox8.Text;
+            string subeIDStr = textBox8.Text;
 
-            // DataTable'a yeni satır ekliyoruz
-            personelTable.Rows.Add(Isim, Soyisim, Pozisyon, MesaiBaslangicSaati, MesaiBitisSaati, SaatlikUcret, Maas, SubeID);
+            // SubeID'nin geçerli bir sayı olup olmadığını kontrol et
+            int subeID;
+            if (!int.TryParse(subeIDStr, out subeID))
+            {
+                MessageBox.Show("Geçersiz SubeID! Lütfen geçerli bir sayı girin.");
+                return; // Geçersiz SubeID olduğunda işlemi durdur
+            }
 
-            // TextBox'ları temizliyoruz (isteğe bağlı)
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
-            textBox8.Clear();
+
+
+
+            // SQL bağlantısı ve komut kullanımı
+            string connectionString = @"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;";
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    baglanti.Open();
+
+                    string sorgu = "INSERT INTO Personeller (Isim, Soyisim, Pozisyon, MesaiBaslangicSaati, MesaiBitisSaati,Maas,SaatlikUcret,subeIDStr) " +
+                                   "VALUES ( @Isim, @Soyisim, @Pozisyon, @MesaiBaslangicSaati, @MesaiBitisSaati,@Maas,@SaatlikUcret,@subeID";
+
+                    using (SqlCommand cmd = new SqlCommand(sorgu, baglanti))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Isim", Isim);
+                        cmd.Parameters.AddWithValue("@Soyisim", Soyisim);
+                        cmd.Parameters.AddWithValue("@Pozisyon", Pozisyon);
+                        cmd.Parameters.AddWithValue("@MesaiBaslangicSaati", MesaiBaslangicSaati);
+                        cmd.Parameters.AddWithValue("@MesaiBitisSaati", MesaiBitisSaati);
+                        cmd.Parameters.AddWithValue("@Maas", Maas);
+                        cmd.Parameters.AddWithValue("@SaatlikUcret", SaatlikUcret);
+                        cmd.Parameters.AddWithValue("@SubeID", subeIDStr);
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Personel Eklendi!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
         }
-
         // DataGridView tıklama olayında, DataGridView'e veri eklemeye gerek yok, zaten DataTable'dan veri çekiliyor.
 
         private void personel_Load(object sender, EventArgs e)
@@ -79,7 +110,7 @@ namespace PETROL_OTOMASYON_8_ARALIIK
         private void AramaYap(string searchText)
         {
             string isim = textBox9.Text;
-            
+
             try
             {
                 // SQL sorgusunu oluşturuyoruz
@@ -104,6 +135,143 @@ namespace PETROL_OTOMASYON_8_ARALIIK
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Giriş Girişform = new Giriş();
+            Girişform.Show();  // Giriş formunu göster
+            this.Hide();        // Ana sayfayı gizle
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // TextBox değerini al
+            string personelIDStr = textBox1.Text;  // Silmek istediğiniz personelin ID'si
+
+            // PersonelID'nin geçerli bir sayı olup olmadığını kontrol et
+            int personelID;
+            if (!int.TryParse(personelIDStr, out personelID))
+            {
+                MessageBox.Show("Geçersiz PersonelID! Lütfen geçerli bir sayı girin.");
+                return; // Geçersiz PersonelID olduğunda işlemi durdur
+            }
+
+            // SQL bağlantısı ve komut kullanımı
+            string connectionString = @"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;";
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    baglanti.Open();
+
+                    // PersonelID'ye göre veri silme sorgusu
+                    string sorgu = "DELETE FROM Personeller WHERE PersonelID = @PersonelID";
+
+                    using (SqlCommand cmd = new SqlCommand(sorgu, baglanti))
+                    {
+                        // Parametre ekleyerek SQL enjeksiyonunu engelle
+                        cmd.Parameters.AddWithValue("@PersonelID", personelID);
+
+                        // Komutu çalıştır ve etkilenen satır sayısını al
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Personel başarıyla silindi!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Silinecek personel bulunamadı.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // TextBox değerlerini al
+            string Isim = textBox1.Text;
+            string Soyisim = textBox2.Text;
+            string Pozisyon = textBox3.Text;
+            string MesaiBaslangicSaati = textBox4.Text;
+            string MesaiBitisSaati = textBox5.Text;
+            string Maas = textBox6.Text;
+            string SaatlikUcret = textBox7.Text;
+            string subeIDStr = textBox8.Text;
+
+            // PersonelID'yi TextBox'dan alıyoruz
+            int personelID;
+            if (!int.TryParse(textBox10.Text, out personelID))
+            {
+                MessageBox.Show("Lütfen geçerli bir PersonelID girin.");
+                return;
+            }
+
+            // SubeID'nin geçerli bir sayı olup olmadığını kontrol et
+            int subeID;
+            if (!int.TryParse(subeIDStr, out subeID))
+            {
+                MessageBox.Show("Geçersiz SubeID! Lütfen geçerli bir sayı girin.");
+                return;
+            }
+
+            // SQL bağlantısı ve komut kullanımı
+            string connectionString = @"Data Source=DESKTOP-AQ2MBA7\SQLEXPRESS;Initial Catalog=petrol_otomasyon;Integrated Security=True;";
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    baglanti.Open();
+
+                    // Güncelleme SQL sorgusu
+                    string sorgu = "UPDATE Personeller SET Isim = @Isim, Soyisim = @Soyisim, Pozisyon = @Pozisyon, " +
+                                   "MesaiBaslangicSaati = @MesaiBaslangicSaati, MesaiBitisSaati = @MesaiBitisSaati, " +
+                                   "Maas = @Maas, SaatlikUcret = @SaatlikUcret, subeID = @subeID " +
+                                   "WHERE PersonelID = @PersonelID"; // PersonelID ile eşleşen kaydı güncelliyoruz
+
+                    using (SqlCommand cmd = new SqlCommand(sorgu, baglanti))
+                    {
+                        // Parametreleri komuta ekleyelim
+                        cmd.Parameters.AddWithValue("@Isim", Isim);
+                        cmd.Parameters.AddWithValue("@Soyisim", Soyisim);
+                        cmd.Parameters.AddWithValue("@Pozisyon", Pozisyon);
+                        cmd.Parameters.AddWithValue("@MesaiBaslangicSaati", MesaiBaslangicSaati);
+                        cmd.Parameters.AddWithValue("@MesaiBitisSaati", MesaiBitisSaati);
+                        cmd.Parameters.AddWithValue("@Maas", Maas);
+                        cmd.Parameters.AddWithValue("@SaatlikUcret", SaatlikUcret);
+                        cmd.Parameters.AddWithValue("@subeID", subeID); // SubeID parametresi
+                        cmd.Parameters.AddWithValue("@PersonelID", personelID); // PersonelID'yi güncelleme sorgusuna ekliyoruz
+
+                        // Komutu çalıştır ve etkilenen satır sayısını al
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Personel verileri başarıyla güncellendi!");  // Güncelleme başarılı
+                        }
+                        else
+                        {
+                            MessageBox.Show("Güncellenecek veriler bulunamadı.");  // Güncellenemezse hata mesajı
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
         }
     }
 }
